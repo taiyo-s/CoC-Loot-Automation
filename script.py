@@ -106,11 +106,6 @@ def ocr(img: np.ndarray) -> tuple[int, int, int]:
     Rotate the cropped screenshot, split into three equal horizontal bands,
     OCR each band with digits-only whitelist, and return integers.
     """
-    CAPTURE_SAVE_DIR.mkdir(exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]  
-    cv2.imwrite(str(CAPTURE_SAVE_DIR / f"{ts}.jpg"), clean)
-    img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
-
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) if img.ndim == 3 else img
 
     blur = cv2.GaussianBlur(gray, (3, 3), 0)
@@ -123,11 +118,6 @@ def ocr(img: np.ndarray) -> tuple[int, int, int]:
     # Remove tiny white dots (“pepper” noise)
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
     clean  = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=1)
-
-    # ---- save original frame ----------------------------------
-    CAPTURE_SAVE_DIR.mkdir(exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]  
-    cv2.imwrite(str(CAPTURE_SAVE_DIR / f"{ts}.jpg"), clean)
 
     ocr_text = pytesseract.image_to_string(
         clean,
