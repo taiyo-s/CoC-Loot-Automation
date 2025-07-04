@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 PC-side listener for ESP32-CAM loot OCR.
 
@@ -17,12 +16,12 @@ from pathlib import Path
 from datetime import datetime
 
 # ---- Configuration ----
-SERIAL_PORT = "/dev/tty.wchusbserial10"   # update if needed
+SERIAL_PORT = "..........."   # change to serial port
 BAUD_RATE   = 460800
 
-GOLD_LOOT_THRESHOLD        = 800_000
-ELIXIR_LOOT_THRESHOLD      = 800_000
-DARK_ELIXIR_LOOT_THRESHOLD = 10_000
+GOLD_LOOT_THRESHOLD        = 800_000 # change to preferred amount
+ELIXIR_LOOT_THRESHOLD      = 800_000 # change to preferred amount
+DARK_ELIXIR_LOOT_THRESHOLD = 10_000 # change to preferred amount
 SKIP_PAUSE_SEC             = 5
 
 START_MARK = "-----START-IMAGE-----"
@@ -145,7 +144,7 @@ def ocr(img: np.ndarray) -> tuple[int, int, int]:
 def main() -> None:
     input("Press <Enter> to start Clash-of-Clans loot detection …")
     print("Started listener …  (Ctrl-C to stop)")
-    time.sleep(1)          # let board finish booting
+    time.sleep(1) # let board finish booting
     flush_rx()
 
     while True:
