@@ -1,0 +1,1 @@
+# CoC-Loot-Automation
