@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/1e4dc8d2-c486-4162-891c-cd84605c54db
 | Part                       | Notes                                              |
 | -------------------------- | -------------------------------------------------- |
 | **ESP32‑CAM (AI‑Thinker)** | Captures 800 × 600 grayscale, crops on‑board.      |
-| **9 g micro‑servo**        | Holds a conductive stylus to tap ⟶.               |
+| **9 g micro‑servo**        | Holds a conductive stylus to tap Next.               |
 | **3‑D‑printed mount**      | Designed in Fusion and 3D printed. https://a360.co/4l9JzhV                |
 | **Conductive stylus tip**  | Designed in Fusion and 3D printed. https://a360.co/44xi4aY               |
 
