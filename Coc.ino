@@ -26,10 +26,10 @@
 Servo tapServo;
 
 /* ROI fractions (same numbers the Python used) */
-constexpr float ROI_TOP_FRAC    = 0.25f;
-constexpr float ROI_BOTTOM_FRAC = 1.00f;
-constexpr float ROI_LEFT_FRAC   = 0.15f;
-constexpr float ROI_RIGHT_FRAC  = 0.75f;
+constexpr float ROI_TOP_FRAC    = 0.25f; # change to relevant dimensions
+constexpr float ROI_BOTTOM_FRAC = 1.00f; # change to relevant dimensions
+constexpr float ROI_LEFT_FRAC   = 0.15f; # change to relevant dimensions
+constexpr float ROI_RIGHT_FRAC  = 0.75f; # change to relevant dimensions
 
 /* Throw away the first N frames in the FIFO */
 static void discard_stale_frames(uint8_t n)
