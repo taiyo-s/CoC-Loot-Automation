@@ -110,7 +110,7 @@ def ocr(img: np.ndarray) -> tuple[int, int, int]:
 
     blur = cv2.GaussianBlur(gray, (3, 3), 0)
 
-    _, thresh = cv2.threshold(blur, 200, 255, cv2.THRESH_BINARY_INV)
+    _, thresh = cv2.threshold(blur, 220, 255, cv2.THRESH_BINARY_INV) # change based on brightness and contrast
 
     # Upscale **and** keep the result
     thresh = cv2.resize(thresh, None, fx=2, fy=2, interpolation=cv2.INTER_LINEAR)
